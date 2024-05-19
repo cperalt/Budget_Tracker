@@ -15,7 +15,7 @@ html {
 html body {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: auto;
   justify-content: center;
 }
 html body main {
@@ -23,17 +23,17 @@ html body main {
   max-width: 900px;
   width: 100%;
   margin: 1rem;
+  border: 3px solid black;
 }
 html body main .budget {
   padding: 1rem;
-  border: 5px solid black;
+  border: 1px solid black;
 }
 html body main .budget .summary_header {
   margin-bottom: 1rem;
 }
 html body main .budget .summary_stats {
   display: flex;
-  background-color: lightblue;
   justify-content: space-between;
 }
 html body main .budget .budget_trans {
