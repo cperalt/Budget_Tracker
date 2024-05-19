@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Budget Tracker</title>
+</head>
+<body>
+    <main>
+        <section class="budget budget_summary">
+            <h2 class="summary_header">Summary</h2>
+            <section class="summary_stats">
+                <div>
+                    <h1 class="summary_balance">Balance</h1> 
+                    <h1 id="summary_balance_amt">$0.00</h1>
+                </div>
+                <div>
+                    <h1 class="summary_income">Income</h1> 
+                    <h1 id="summary_income_amt">$0.00</h1>
+                </div>
+                <div>
+                    <h1 class="summary_expenses">Expenses</h1> 
+                    <h1 id="summary_income_exp">$0.00</h1>
+                </div>
+            </section>
+        </section>
+        <section class="budget budget_income">
+            <div>
+                <h3>Income</h2>
+                <form class="budget_trans budget_trans-income">
+                    <div>
+                        <label for="income-desc">Description:</label>
+                        <input type="text" name="income-desc" id="income-desc" class="input-label">
+                    </div>
+                    <div>
+                        <label for="income-amt">Amount: $</label>
+                        <input type="number" name="income-amt" id="income-amt" class="input-amt">
+                    </div>
+                    <div>
+                        <button type="submit" class="income-submit">Submit</button>
+                    </div>
+                </form>
+                <section class="budget_trans_container"></section>
+            </div>
+        </section>
+        <section class="budget budget_expense">
+            <div>
+                <h3>Expenses</h2>
+                <form class="budget_trans budget_trans-expenses">
+                    <div>
+                        <label for="income-desc" class="input-label">Description:</label>
+                        <input type="text" name="income-desc" id="expense-desc" class="input-label">
+                    </div>
+                    <div>
+                        <label for="expense-amt">Amount: $</label>
+                        <input type="number" name="expense-amt" id="expense-amt" class="input-amt">
+                    </div>
+                    <div>
+                        <button type="submit" class="expense-submit">Submit</button>
+                    </div>
+                </form>
+                <section class="budget_trans_container2"></section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
