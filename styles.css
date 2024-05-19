@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+  background-image: linear-gradient(to right, #07c906, #c3f73d);
 }
 @media screen and (min-width: 1000px) {
   html {
@@ -19,7 +20,7 @@ html body {
   justify-content: center;
 }
 html body main {
-  background-color: lightpink;
+  background-color: #c3f73d;
   max-width: 900px;
   width: 100%;
   margin: 1rem;

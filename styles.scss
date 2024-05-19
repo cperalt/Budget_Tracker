@@ -4,8 +4,17 @@
     margin: 0;
 }
 
+
+$primary-color: #c3f73d;
+
+@mixin gradient($color1, $color2) {
+    background-image: linear-gradient(to right, $color1, $color2);
+  }
+
+
 html {
     font-size: 16px;
+    @include gradient(#07c906, #c3f73d);
 
     @media screen and (min-width: 1000px){
         font-size: 25px;
@@ -18,7 +27,7 @@ html {
         justify-content: center;
 
         main {
-            background-color: lightpink;
+            background-color: $primary-color;
             max-width: 900px;
             width: 100%;
             margin: 1rem;
