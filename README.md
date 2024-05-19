@@ -27,3 +27,7 @@
 
 ## Instructions
 * Input a description and an number amound and press sumbit.
+
+
+> [!NOTE]
+> There is a bug when the user attempts to submit an identical transaction such as Salary 345 and Salary 524. Only the first Salary submission gets added to the totals and to the income object while the rest are ommitted. This is due to the nature of objects and key value pairs, where keys are unique, resulting in that there can only be one unique key. The method used to add the transactions is perhaps not best practice due to this situation. I intend to revise the code in a way that is more flexible and better implemented.
