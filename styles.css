@@ -1,0 +1,67 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 25px;
+  }
+}
+html body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+html body main {
+  background-color: lightpink;
+  max-width: 900px;
+  width: 100%;
+  margin: 1rem;
+}
+html body main .budget {
+  padding: 1rem;
+  border: 5px solid black;
+}
+html body main .budget .summary_header {
+  margin-bottom: 1rem;
+}
+html body main .budget .summary_stats {
+  display: flex;
+  background-color: lightblue;
+  justify-content: space-between;
+}
+html body main .budget .budget_trans {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  background-color: inherit;
+  margin-top: 1rem;
+}
+html body main .budget .budget_trans input, html body main .budget .budget_trans button {
+  font: inherit;
+  line-height: inherit;
+  padding: 0.2rem;
+}
+html body main .budget .budget_trans .input-label {
+  width: 8rem;
+}
+html body main .budget .budget_trans .input-amt {
+  width: 6rem;
+}
+html body main .budget .trans-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 3rem;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */
