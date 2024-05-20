@@ -44,6 +44,14 @@ html {
                 .summary_stats {
                     display: flex;
                     justify-content: space-between;
+
+                    .summary_income, #summary_income_amt {
+                        color: green;
+                    }
+                    
+                    .summary_expenses, #summary_expenses_amt {
+                        color: red;
+                    }
                 }
 
                 .budget_trans {

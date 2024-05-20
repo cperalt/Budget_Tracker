@@ -37,6 +37,12 @@ html body main .budget .summary_stats {
   display: flex;
   justify-content: space-between;
 }
+html body main .budget .summary_stats .summary_income, html body main .budget .summary_stats #summary_income_amt {
+  color: green;
+}
+html body main .budget .summary_stats .summary_expenses, html body main .budget .summary_stats #summary_expenses_amt {
+  color: red;
+}
 html body main .budget .budget_trans {
   display: flex;
   width: 100%;
