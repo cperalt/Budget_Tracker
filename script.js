@@ -1,7 +1,7 @@
 //Target html elements
 const sumTotalBal = document.querySelector("#summary_balance_amt");
 const sumIncome = document.querySelector("#summary_income_amt");
-const sumExpense = document.querySelector("#summary_income_exp");
+const sumExpense = document.querySelector("#summary_expenses_amt");
 
 //Create budget class
 class Budget {
@@ -9,26 +9,39 @@ class Budget {
     constructor() {
         this.income = {};
         this.expense = {};
+        this.currentId = 0;
     }
 
     //addIncome method takes in a description and amount and creates the key value pair to the income obj
     addIncome(description, amount) {
-        this.income[description] = amount;
+        const id = this.currentId.toString(); //convert key to string to ensure uniqueness so they dont get overwritten
+        this.income[id] = { description: description, amount: amount };
+        this.currentId++;
     }
 
     //addExpense method takes in a description and amount and creates the key value pair to the expense obj
     addExpense(description, amount) {
-        this.expense[description] = amount;
+        const id = this.currentId.toString(); //convert key to string to ensure uniqueness so they don't get overwritten
+        this.expense[id] = { description: description, amount: amount };
+        this.currentId++;
     }
 
     //Returns sum of total values in income object
     totalIncome() {
-        return Object.values(this.income).reduce((total, income) => total + income, 0)
+        let total = 0;
+        for (let id in this.income) {
+            total += this.income[id].amount;
+        }
+        return total;
     }
 
     //Returns sum of total values in expense object
     totalExpense() {
-        return Object.values(this.expense).reduce((total, expense) => total + expense, 0)
+        let total = 0;
+        for (let id in this.expense) {
+            total += this.expense[id].amount;
+        }
+        return total;
     }
 
     //Returns total income minus total expenses
@@ -84,7 +97,8 @@ addIncome.addEventListener('click', function() {
     //calls the addIncome method to add the description/number key value pair to the income object
     userBudget.addIncome(description, Number(amount));
 
-    const container = document.querySelector(".budget_trans_container")
+    const container = document.querySelector(".budget_trans_container");
+    container.style.color = "green";
 
     displayTrans(description, amount, container);
     //updates total income in summary by calling the totalIncome method
@@ -101,6 +115,7 @@ addExpense.addEventListener('click', function() {
     userBudget.addExpense(description, Number(amount));
 
     const container = document.querySelector(".budget_trans_container2")
+    container.style.color = "red";
     displayTrans(description, amount, container);
     //updates total expense in summary by calling the totalExpense method
     sumExpense.innerHTML = ` $${userBudget.totalExpense()}`;
